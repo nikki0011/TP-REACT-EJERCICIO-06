@@ -1,9 +1,9 @@
-const ItemColor = () => {
+const ItemColor = ({textoColorProps}) => {
   return (
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card mt-3">
         <div className="card-body border-0 d-flex flex-column align-items-center row-gap-2">
-          <h5 className="card-title">Nombre color</h5>
+          <h5 className="card-title">{textoColorProps}</h5>
           <div className="caja-colorItem"></div>
           <div>
             <button className="btn btn-danger">Eliminar</button>

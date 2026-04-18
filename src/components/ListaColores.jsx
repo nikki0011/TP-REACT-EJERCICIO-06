@@ -1,13 +1,13 @@
 import ItemColor from "./ItemColor";
 
-const ListaColores = () => {
+const ListaColores = ({arrayColoresProps}) => {
   return (
     <section className="container">
       <div className="row">
-        <ItemColor></ItemColor>
-        <ItemColor></ItemColor>
-        <ItemColor></ItemColor>
-        <ItemColor></ItemColor>
+        {
+          arrayColoresProps.map((textoColor, indice) => <ItemColor key={indice} textoColorProps={textoColor}></ItemColor>)
+        }
+        
       </div>
     </section>
   );
