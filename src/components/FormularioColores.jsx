@@ -5,20 +5,31 @@ const FormularioColores = () => {
   const [arrayColores, setArrayColores] = useState([]);
   const [color, setColor] = useState("");
 
-  const handleSubmit = (e)=>{
-  e.preventDefault()
-  console.log('submit')
-  //validamos el color
-  const colorBuscado = arrayColores.find((itemColor)=> itemColor.toLowerCase() === color.toLowerCase().trim() )
-  console.log(colorBuscado)
-  if(colorBuscado){
-    return alert('La tarea ya existe')
-  }
-  //agregar el "color" dentro del arrayTareas
-  setArrayColores([...arrayColores, color.trim()])
-  //limpiar el input
-  setColor('')
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit");
+    //validamos el color
+    const colorBuscado = arrayColores.find(
+      (itemColor) => itemColor.toLowerCase() === color.toLowerCase().trim(),
+    );
+    console.log(colorBuscado);
+    if (colorBuscado) {
+      return alert("La tarea ya existe");
+    }
+    //agregar el "color" dentro del arrayTareas
+    setArrayColores([...arrayColores, color.trim()]);
+    //limpiar el input
+    setColor("");
+  };
+
+  const borrarColor = (nombreColor) => {
+    const arrayFiltrado = arrayColores.filter(
+      (itemColor) => itemColor !== nombreColor,
+    );
+    // actualizar el state
+    setArrayColores(arrayFiltrado);
+  };
+
   return (
     <>
       <section className=" container  border border-1 p-3 d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
@@ -37,7 +48,7 @@ const FormularioColores = () => {
           </div>
         </form>
       </section>
-      <ListaColores arrayColoresProps={arrayColores}></ListaColores>
+      <ListaColores arrayColoresProps={arrayColores} borrarColorProps={borrarColor}></ListaColores>
     </>
   );
 };

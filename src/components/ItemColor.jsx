@@ -1,4 +1,4 @@
-const ItemColor = ({textoColorProps}) => {
+const ItemColor = ({textoColorProps,borrarColorProps}) => {
   return (
     <div className="col-6 col-md-4 col-lg-3">
       <div className="card mt-3">
@@ -6,7 +6,7 @@ const ItemColor = ({textoColorProps}) => {
           <h5 className="card-title">{textoColorProps}</h5>
           <div className="caja-colorItem"></div>
           <div>
-            <button className="btn btn-danger">Eliminar</button>
+            <button className="btn btn-danger" onClick={()=> borrarColorProps(textoColorProps)}>Eliminar</button>
           </div>
         </div>
       </div>
