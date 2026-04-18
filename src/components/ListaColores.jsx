@@ -1,7 +1,14 @@
+import ItemColor from "./ItemColor";
+
 const ListaColores = () => {
   return (
-    <section className="container my-2 border border-1">
-      <div className="row">lista colores</div>
+    <section className="container">
+      <div className="row">
+        <ItemColor></ItemColor>
+        <ItemColor></ItemColor>
+        <ItemColor></ItemColor>
+        <ItemColor></ItemColor>
+      </div>
     </section>
   );
 };

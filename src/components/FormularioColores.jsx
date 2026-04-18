@@ -17,9 +17,7 @@ const FormularioColores = () => {
           </div>
         </form>
       </section>
-      <section>
-        <ListaColores></ListaColores>
-      </section>
+      <ListaColores></ListaColores>
     </>
   );
 };
