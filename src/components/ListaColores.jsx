@@ -1,13 +1,16 @@
 import ItemColor from "./ItemColor";
 
-const ListaColores = ({arrayColoresProps, borrarColorProps}) => {
+const ListaColores = ({ arrayColoresProps, borrarColorProps }) => {
   return (
     <section className="container">
       <div className="row">
-        {
-          arrayColoresProps.map((textoColor, indice) => <ItemColor key={indice} textoColorProps={textoColor} borrarColorProps={borrarColorProps}></ItemColor>)
-        }
-        
+        {arrayColoresProps.map((textoColor, indice) => (
+          <ItemColor
+            key={indice}
+            textoColorProps={textoColor}
+            borrarColorProps={borrarColorProps}
+          ></ItemColor>
+        ))}
       </div>
     </section>
   );
